@@ -1,0 +1,45 @@
+<nav class="navbar navbar-expand navbar-light bg-light">
+  <a class="navbar-brand" routerLink="/">Phone Book</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <a class="btn my-2 ml-auto" routerLink="/contacts/add">
+      <i class="fas fa-plus"></i>
+    </a>
+  </div>
+</nav>
+<div class="container-fluid">
+  <div class="table-responsive my-md-4 my-2">
+    <table class="table">
+      <thead>
+      <tr>
+        <th scope="col">Id</th>
+        <th scope="col">FirstName</th>
+        <th scope="col">LastName</th>
+        <th scope="col">Number</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let contact of newContacts;index as i">
+        <td>{{contact.id}}</td>
+        <td>{{contact.firstName}}</td>
+        <td>{{contact.lastName}}</td>
+        <td>{{contact.phone}}</td>
+        <td>
+          <div class="table-actions">
+            <button class="btn mx-2 py-0" (click)="onEditContactClick(contact)">
+              <i class="fas fa-edit"></i>
+            </button>
+            <button class="btn mx-2 py-0" (click)="onDeleteContactClick(contact)">
+              <i class="fas fa-trash-alt"></i>
+            </button>
+          </div>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

@@ -1,0 +1,26 @@
+<div class="form-wrapper my-2">
+  <form [formGroup]="form">
+    <div class="form-group">
+      <label>First Name</label>
+      <input type="text" class="form-control" aria-errormessage="firstNameError" required="required" formControlName="firstName">
+      <small id="firstNameError" class="form-text text-danger">
+        {{!form.get('firstName')!.valid && isSubmitted ? 'First Name is required' : ''}}
+      </small>
+    </div>
+    <div class="form-group">
+      <label>Last Name</label>
+      <input type="text" class="form-control" aria-errormessage="lastNameError" required="required" formControlName="lastName">
+      <small id="lastNameError" class="form-text text-danger">
+        {{!form.get('lastName')!.valid && isSubmitted ? 'Last Name is required' : ''}}
+      </small>
+    </div>
+    <div class="form-group">
+      <label>Phone</label>
+      <input type="text" class="form-control" aria-errormessage="phoneError" required="required"
+             formControlName="phone">
+      <small id="phoneError" class="form-text text-danger">
+        {{ !form.get('phone')!.valid && isSubmitted ? 'Phone is required' : ''}}
+      </small>
+    </div>
+  </form>
+</div>
